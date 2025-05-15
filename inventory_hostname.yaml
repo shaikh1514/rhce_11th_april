@@ -1,0 +1,7 @@
+---
+  - name: demo of inventory_hostname play
+    hosts: appservers
+    tasks:
+      - name: print the host information
+        ansible.builtin.debug:
+          msg: The tasks will be execute on the host named {{ inventory_hostname }}

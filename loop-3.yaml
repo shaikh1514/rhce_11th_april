@@ -1,0 +1,14 @@
+---
+  - name: demo of loop
+    hosts: servera.lab.example.com
+    vars:
+      fruits:
+        - apple
+        - banana
+        - mango
+        - watermelon
+    tasks:
+      - name: print fruit names
+        ansible.builtin.debug:
+          msg: The fruits available is {{ item }}
+        loop: "{{ fruits }}"

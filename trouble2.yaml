@@ -1,0 +1,9 @@
+---
+  - name: testing troublehsooting
+    hosts: serverb.lab.example.com
+    tasks:
+    - name: create a file
+      ansible.builtin.file:
+        path: /home/student/myfile.txt
+        state: touch
+

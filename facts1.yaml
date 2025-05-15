@@ -1,0 +1,15 @@
+---
+  - name: demo of facts
+    hosts: webservers
+    tasks:
+      - name: print memory information
+        ansible.builtin.debug:
+          msg: The avaiable memory in {{ ansible_facts['hostname'] }} is {{ ansible_facts['memtotal_mb'] }} MB
+
+      - name: print storage information
+        ansible.builtin.debug:
+          msg: The avaible storage in {{ ansible_facts['hostname'] }} is {{ ansible_facts.devices.vda.size }} GB
+
+      - name: variable using older method
+        ansible.builtin.debug:
+          msg: bios version is {{ ansible_bios_version }}

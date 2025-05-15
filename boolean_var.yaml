@@ -1,0 +1,11 @@
+---
+  - name: download the package
+    hosts: servera.lab.example.com
+    vars:
+      myvalue: true
+    tasks:
+      - name: install http package
+        ansible.builtin.dnf:
+          name: httpd
+          state: latest
+        when: myvalue

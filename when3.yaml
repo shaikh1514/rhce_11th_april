@@ -1,0 +1,22 @@
+---
+  - name: demo of when again
+    hosts: serverb.lab.example.com
+    tasks:
+      - name: check directory exists
+        ansible.builtin.stat:
+          path: /home/student1
+        register: mango
+
+      - name: execute cmd
+        ansible.builtin.command:
+          cmd: "{{ item }}"
+        loop:
+          - whoami
+          - hostname
+          - free -h
+          - uname -r
+        when: mango.stat.exists
+
+      - name: print the value
+        ansible.builtin.debug:
+          var: mango

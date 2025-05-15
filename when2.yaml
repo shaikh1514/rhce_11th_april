@@ -1,0 +1,10 @@
+---
+  - name: demo of when
+    hosts: servera.lab.example.com
+    vars:
+      print: true
+    tasks:
+      - name: print the msg based on cccondition
+        ansible.builtin.debug:
+          msg: "This msg will print only if the value of print variable is True"
+        when: print

@@ -1,0 +1,9 @@
+---
+  - name: evaluation ansible.cfg
+    hosts: servera.lab.example.com
+    become: false
+    tasks:
+      - name: creating directory
+        ansible.builtin.file:
+          path: /home/devops/file2.txt
+          state: touch

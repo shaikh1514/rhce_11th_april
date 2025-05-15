@@ -1,0 +1,9 @@
+---
+  - name: configure ntp server
+    hosts: webservers
+    vars:
+      timesync_ntp_servers:
+        - hostname: time.google.com
+          iburst: yes
+    roles:
+      - redhat.rhel_system_roles.timesync

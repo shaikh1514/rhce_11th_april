@@ -1,0 +1,15 @@
+---
+  - name: printing variable value based on precendence
+    hosts: appservers
+    vars_files:
+      - myvar/var1.yaml
+    tasks:
+      - name: print the variable value
+        ansible.builtin.debug:
+          msg: we are learning {{ tech }}
+
+      - name: printing another variable
+        ansible.builtin.debug:
+          msg: We are not learning {{ tech }}
+        vars:
+          tech: Physics

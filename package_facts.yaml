@@ -1,0 +1,10 @@
+---
+  - name: getting pckages facts
+    hosts: dbservers
+    tasks:
+      - name: getting package facts
+        ansible.builtin.package_facts:
+
+      - name: print autofs package info
+        ansible.builtin.debug:
+          var: ansible_facts['packages']['httpd']

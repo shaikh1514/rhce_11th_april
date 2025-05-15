@@ -1,0 +1,12 @@
+---
+  - name: install package using custom facts
+    hosts: appservers
+    tasks:
+      - name: print custom facts
+        ansible.builtin.debug:
+          var: ansible_local
+      - name: install package
+        ansible.builtin.dnf:
+          name: "{{ ansible_facts['ansible_local']['custom']['general']['pkg'] }}"
+          state: latest
+

@@ -1,0 +1,8 @@
+---
+  - name: demo of when using ansible facts
+    hosts: serverc.lab.example.com
+    tasks:
+      - name: print the msg based on condition
+        ansible.builtin.debug:
+          msg: You will see this only if condition match
+        when: ansible_facts.memtotal_mb < 1000 or inventory_hostname == 'serverb.lab.example.com'

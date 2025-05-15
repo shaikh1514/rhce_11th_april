@@ -1,0 +1,5 @@
+---
+  - name: installing geerlingguy.apache role
+    hosts: serverd.lab.example.com
+    roles:
+      - geerlingguy.apache

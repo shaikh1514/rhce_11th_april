@@ -1,0 +1,10 @@
+---
+# tasks file for myrole
+  - name: first role tasks
+    ansible.builtin.command:
+      cmd: lsblk
+    notify: role_handler
+
+  - name: second role tasks
+    ansible.builtin.debug:
+      msg: This is Roles tasks

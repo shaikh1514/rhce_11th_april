@@ -1,0 +1,21 @@
+---
+  - name: understanding errors
+    hosts: servera.lab.example.com
+    tasks:
+      - name: install package
+        ansible.builtin.dnf:
+          name: httpd
+          state: latest
+
+      - name: start service
+        ansible.builtin.service:
+          name: httpd
+          state: started
+          enabled: true
+
+      - name: configure firewall
+        ansible.posix.firewalld:
+          service: http
+          state: enabled
+          immediate: true
+          permanent: true

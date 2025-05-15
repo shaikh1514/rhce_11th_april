@@ -1,0 +1,7 @@
+---
+  - name: print all the facts
+    hosts: servera.lab.example.com
+    tasks:
+      - name: print all the system facts
+        ansible.builtin.debug:
+          var: ansible_facts

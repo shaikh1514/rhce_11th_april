@@ -1,0 +1,11 @@
+---
+  - name: chngin type context using file moduke
+    hosts: serverc.lab.example.com
+    tasks:
+      - name: chaning selincu type
+        ansible.builtin.file:
+          path: /home/student/ansible.cfg
+          seuser: _default
+          serole: _default
+          setype: _default
+          selevel: _default

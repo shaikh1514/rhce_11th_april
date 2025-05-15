@@ -1,0 +1,88 @@
+May  4 23:16:58 serverb sshd[1295]: Accepted publickey for devops from 172.25.250.9 port 39642 ssh2: RSA SHA256:M8ikhcEDm2tQ95Z0o7ZvufqEixCFCt+wowZLNzNlBT0
+May  4 23:16:58 serverb systemd[1300]: pam_unix(systemd-user:session): session opened for user devops(uid=1001) by (uid=0)
+May  4 23:16:58 serverb sshd[1295]: pam_unix(sshd:session): session opened for user devops(uid=1001) by (uid=0)
+May  4 23:16:59 serverb sudo[1414]:  devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-nzsdnhljeyvixuquijikfkhzrpzfdoqo ; /usr/bin/python3 /home/devops/.ansible/tmp/ansible-tmp-1746415018.5326083-25-225704506238669/AnsiballZ_setup.py
+May  4 23:16:59 serverb sudo[1414]: pam_unix(sudo:session): session opened for user root(uid=0) by devops(uid=1001)
+May  4 23:16:59 serverb sudo[1414]: pam_unix(sudo:session): session closed for user root
+May  4 23:17:00 serverb sudo[1541]:  devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-gbeixjndgfiginrezcfbrevaqzdiizse ; /usr/bin/python3 /home/devops/.ansible/tmp/ansible-tmp-1746415020.0189178-39-254577255999342/AnsiballZ_command.py
+May  4 23:17:00 serverb sudo[1541]: pam_unix(sudo:session): session opened for user root(uid=0) by devops(uid=1001)
+May  4 23:17:00 serverb sudo[1541]: pam_unix(sudo:session): session closed for user root
+May  4 23:17:00 serverb sudo[1634]:  devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-vzqeorcabtdnnrjgzgvlwjfcaypwgoxy ; /usr/bin/python3 /home/devops/.ansible/tmp/ansible-tmp-1746415020.558754-50-100215262477330/AnsiballZ_file.py
+May  4 23:17:00 serverb sudo[1634]: pam_unix(sudo:session): session opened for user root(uid=0) by devops(uid=1001)
+May  4 23:17:01 serverb sudo[1634]: pam_unix(sudo:session): session closed for user root
+May  4 23:17:01 serverb sshd[1295]: pam_unix(sshd:session): session closed for user devops
+May  4 23:17:17 serverb sshd[1654]: Accepted publickey for devops from 172.25.250.9 port 39644 ssh2: RSA SHA256:M8ikhcEDm2tQ95Z0o7ZvufqEixCFCt+wowZLNzNlBT0
+May  4 23:17:17 serverb systemd[1658]: pam_unix(systemd-user:session): session opened for user devops(uid=1001) by (uid=0)
+May  4 23:17:17 serverb sshd[1654]: pam_unix(sshd:session): session opened for user devops(uid=1001) by (uid=0)
+May  4 23:17:18 serverb sudo[1772]:  devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-rjeuueuwkoxwdpyfxfzbvwhpmjoyeoqr ; /usr/bin/python3 /home/devops/.ansible/tmp/ansible-tmp-1746415037.6155393-25-70456424569201/AnsiballZ_setup.py
+May  4 23:17:18 serverb sudo[1772]: pam_unix(sudo:session): session opened for user root(uid=0) by devops(uid=1001)
+May  4 23:17:18 serverb sudo[1772]: pam_unix(sudo:session): session closed for user root
+May  4 23:17:19 serverb sudo[1899]:  devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-aiuwubiiachgpkpwqnhljzhsofigiway ; /usr/bin/python3 /home/devops/.ansible/tmp/ansible-tmp-1746415038.950683-39-272979679377876/AnsiballZ_command.py
+May  4 23:17:19 serverb sudo[1899]: pam_unix(sudo:session): session opened for user root(uid=0) by devops(uid=1001)
+May  4 23:17:19 serverb sudo[1899]: pam_unix(sudo:session): session closed for user root
+May  4 23:17:19 serverb sudo[1992]:  devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-imenyebrtpjdxkuxedvyvxufbwvrcfbd ; /usr/bin/python3 /home/devops/.ansible/tmp/ansible-tmp-1746415039.5041597-50-89192697500138/AnsiballZ_file.py
+May  4 23:17:19 serverb sudo[1992]: pam_unix(sudo:session): session opened for user root(uid=0) by devops(uid=1001)
+May  4 23:17:19 serverb sudo[1992]: pam_unix(sudo:session): session closed for user root
+May  4 23:17:20 serverb sshd[1654]: pam_unix(sshd:session): session closed for user devops
+May  4 23:18:44 serverb sshd[2010]: Accepted publickey for devops from 172.25.250.9 port 39646 ssh2: RSA SHA256:M8ikhcEDm2tQ95Z0o7ZvufqEixCFCt+wowZLNzNlBT0
+May  4 23:18:44 serverb systemd[2014]: pam_unix(systemd-user:session): session opened for user devops(uid=1001) by (uid=0)
+May  4 23:18:44 serverb sshd[2010]: pam_unix(sshd:session): session opened for user devops(uid=1001) by (uid=0)
+May  4 23:18:44 serverb sudo[2128]:  devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-iisypsiadtvnkpehqwnzyeigpiebkfqf ; /usr/bin/python3 /home/devops/.ansible/tmp/ansible-tmp-1746415124.3977487-25-28675621733869/AnsiballZ_setup.py
+May  4 23:18:44 serverb sudo[2128]: pam_unix(sudo:session): session opened for user root(uid=0) by devops(uid=1001)
+May  4 23:18:45 serverb sudo[2128]: pam_unix(sudo:session): session closed for user root
+May  4 23:18:46 serverb sudo[2255]:  devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-utvxmrejsmkwzqnntnlmlpraujwraqct ; /usr/bin/python3 /home/devops/.ansible/tmp/ansible-tmp-1746415125.7621987-39-267794229494937/AnsiballZ_command.py
+May  4 23:18:46 serverb sudo[2255]: pam_unix(sudo:session): session opened for user root(uid=0) by devops(uid=1001)
+May  4 23:18:46 serverb sudo[2255]: pam_unix(sudo:session): session closed for user root
+May  4 23:18:46 serverb sudo[2348]:  devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-wvehybvmbdpiqxjrujdoyrelrkdgwknl ; /usr/bin/python3 /home/devops/.ansible/tmp/ansible-tmp-1746415126.2873824-50-94665132741369/AnsiballZ_file.py
+May  4 23:18:46 serverb sudo[2348]: pam_unix(sudo:session): session opened for user root(uid=0) by devops(uid=1001)
+May  4 23:18:46 serverb sudo[2348]: pam_unix(sudo:session): session closed for user root
+May  4 23:18:46 serverb sshd[2010]: pam_unix(sshd:session): session closed for user devops
+May  4 23:19:49 serverb sshd[2366]: Accepted publickey for devops from 172.25.250.9 port 39648 ssh2: RSA SHA256:M8ikhcEDm2tQ95Z0o7ZvufqEixCFCt+wowZLNzNlBT0
+May  4 23:19:49 serverb systemd[2370]: pam_unix(systemd-user:session): session opened for user devops(uid=1001) by (uid=0)
+May  4 23:19:49 serverb sshd[2366]: pam_unix(sshd:session): session opened for user devops(uid=1001) by (uid=0)
+May  4 23:19:50 serverb sudo[2484]:  devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-rwprfikvhnksddxhefkbqaxsyavnosnc ; /usr/bin/python3 /home/devops/.ansible/tmp/ansible-tmp-1746415189.8592916-25-117396825395728/AnsiballZ_setup.py
+May  4 23:19:50 serverb sudo[2484]: pam_unix(sudo:session): session opened for user root(uid=0) by devops(uid=1001)
+May  4 23:19:51 serverb sudo[2484]: pam_unix(sudo:session): session closed for user root
+May  4 23:19:51 serverb sudo[2611]:  devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-yuejbbofkvxpjzomoxhqqskcjfzzlhap ; /usr/bin/python3 /home/devops/.ansible/tmp/ansible-tmp-1746415191.2137334-39-266383838024609/AnsiballZ_command.py
+May  4 23:19:51 serverb sudo[2611]: pam_unix(sudo:session): session opened for user root(uid=0) by devops(uid=1001)
+May  4 23:19:51 serverb sudo[2611]: pam_unix(sudo:session): session closed for user root
+May  4 23:19:51 serverb sshd[2366]: pam_unix(sshd:session): session closed for user devops
+May  5 22:36:37 serverb polkitd[728]: Loading rules from directory /etc/polkit-1/rules.d
+May  5 22:36:37 serverb polkitd[728]: Loading rules from directory /usr/share/polkit-1/rules.d
+May  5 22:36:37 serverb polkitd[728]: Finished loading, compiling and executing 4 rules
+May  5 22:36:37 serverb polkitd[728]: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+May  5 22:36:38 serverb sshd[758]: Server listening on 0.0.0.0 port 22.
+May  5 22:36:38 serverb sshd[758]: Server listening on :: port 22.
+May  5 23:18:01 serverb sshd[1271]: Accepted publickey for devops from 172.25.250.9 port 50992 ssh2: RSA SHA256:M8ikhcEDm2tQ95Z0o7ZvufqEixCFCt+wowZLNzNlBT0
+May  5 23:18:01 serverb systemd[1275]: pam_unix(systemd-user:session): session opened for user devops(uid=1001) by (uid=0)
+May  5 23:18:01 serverb sshd[1271]: pam_unix(sshd:session): session opened for user devops(uid=1001) by (uid=0)
+May  5 23:18:02 serverb sudo[1390]:  devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-rhmzgzvkcbnhyegszzvrgbuuzdnyyaok ; /usr/bin/python3 /home/devops/.ansible/tmp/ansible-tmp-1746501481.6973186-25-31383763627782/AnsiballZ_setup.py
+May  5 23:18:02 serverb sudo[1390]: pam_unix(sudo:session): session opened for user root(uid=0) by devops(uid=1001)
+May  5 23:18:03 serverb sudo[1390]: pam_unix(sudo:session): session closed for user root
+May  5 23:18:03 serverb sudo[1517]:  devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-omntvioxxcuhnonxjbmmecwyjwzhenky ; /usr/bin/python3 /home/devops/.ansible/tmp/ansible-tmp-1746501483.606327-39-115464973730112/AnsiballZ_command.py
+May  5 23:18:03 serverb sudo[1517]: pam_unix(sudo:session): session opened for user root(uid=0) by devops(uid=1001)
+May  5 23:18:04 serverb sudo[1517]: pam_unix(sudo:session): session closed for user root
+May  5 23:18:04 serverb sudo[1610]:  devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-xiinoqriwfyqjjfybugcrqcmfqgxcfgf ; /usr/bin/python3 /home/devops/.ansible/tmp/ansible-tmp-1746501484.1987588-50-146162120485461/AnsiballZ_command.py
+May  5 23:18:04 serverb sudo[1610]: pam_unix(sudo:session): session opened for user root(uid=0) by devops(uid=1001)
+May  5 23:18:04 serverb sudo[1610]: pam_unix(sudo:session): session closed for user root
+May  5 23:18:04 serverb sshd[1271]: pam_unix(sshd:session): session closed for user devops
+May  5 23:18:56 serverb sshd[1631]: Accepted publickey for devops from 172.25.250.9 port 50994 ssh2: RSA SHA256:M8ikhcEDm2tQ95Z0o7ZvufqEixCFCt+wowZLNzNlBT0
+May  5 23:18:56 serverb systemd[1635]: pam_unix(systemd-user:session): session opened for user devops(uid=1001) by (uid=0)
+May  5 23:18:56 serverb sshd[1631]: pam_unix(sshd:session): session opened for user devops(uid=1001) by (uid=0)
+May  5 23:18:57 serverb sudo[1749]:  devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-bbtmusvvqhcqutjmnctsqmnegaobbrto ; /usr/bin/python3 /home/devops/.ansible/tmp/ansible-tmp-1746501536.8870916-25-198306919411887/AnsiballZ_setup.py
+May  5 23:18:57 serverb sudo[1749]: pam_unix(sudo:session): session opened for user root(uid=0) by devops(uid=1001)
+May  5 23:18:58 serverb sudo[1749]: pam_unix(sudo:session): session closed for user root
+May  5 23:18:58 serverb sudo[1876]:  devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-hsbzvtrubrormxqhyjvbkvbygnfeieam ; /usr/bin/python3 /home/devops/.ansible/tmp/ansible-tmp-1746501538.2434251-39-232868797775720/AnsiballZ_command.py
+May  5 23:18:58 serverb sudo[1876]: pam_unix(sudo:session): session opened for user root(uid=0) by devops(uid=1001)
+May  5 23:18:58 serverb sudo[1876]: pam_unix(sudo:session): session closed for user root
+May  5 23:18:59 serverb sudo[1969]:  devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-jeibdpvnmysriybwnpvmiwnkonuaonla ; /usr/bin/python3 /home/devops/.ansible/tmp/ansible-tmp-1746501538.7452044-50-105722389725254/AnsiballZ_file.py
+May  5 23:18:59 serverb sudo[1969]: pam_unix(sudo:session): session opened for user root(uid=0) by devops(uid=1001)
+May  5 23:18:59 serverb sudo[1969]: pam_unix(sudo:session): session closed for user root
+May  5 23:18:59 serverb sshd[1631]: pam_unix(sshd:session): session closed for user devops
+May  5 23:28:16 serverb sshd[1988]: Accepted publickey for devops from 172.25.250.9 port 50996 ssh2: RSA SHA256:M8ikhcEDm2tQ95Z0o7ZvufqEixCFCt+wowZLNzNlBT0
+May  5 23:28:17 serverb systemd[1992]: pam_unix(systemd-user:session): session opened for user devops(uid=1001) by (uid=0)
+May  5 23:28:17 serverb sshd[1988]: pam_unix(sshd:session): session opened for user devops(uid=1001) by (uid=0)
+May  5 23:28:17 serverb sudo[2107]:  devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-cdxhpaudxewohwkrjuxduwxuhzlvdlyt ; /usr/bin/python3 /home/devops/.ansible/tmp/ansible-tmp-1746502097.1645188-26-88246039209320/AnsiballZ_setup.py
+May  5 23:28:17 serverb sudo[2107]: pam_unix(sudo:session): session opened for user root(uid=0) by devops(uid=1001)
+May  5 23:28:18 serverb sudo[2107]: pam_unix(sudo:session): session closed for user root
+May  5 23:28:18 serverb sudo[2234]:  devops : TTY=pts/0 ; PWD=/home/devops ; USER=root ; COMMAND=/bin/sh -c echo BECOME-SUCCESS-qdafzqlmsvdruykenlihdmxqkfxkxeww ; /usr/bin/python3 /home/devops/.ansible/tmp/ansible-tmp-1746502098.5375204-54-29760686929772/AnsiballZ_slurp.py

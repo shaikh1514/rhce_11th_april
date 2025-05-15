@@ -1,0 +1,22 @@
+---
+  users:
+    - name: alex
+      pass: redhat@123
+      group: webapp
+      job: coder
+    - name: martine
+      pass: redhat@123
+      group: webapp
+      job: coder
+    - name: jacob
+      pass: redhat@456
+      group: development
+      job: developer
+    - name: smith
+      pass: redhat@456
+      group: development
+      job: developer
+    - name: lisa
+      pass: redhat@789
+      group: manager
+      job: admin

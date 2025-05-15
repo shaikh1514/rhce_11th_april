@@ -1,0 +1,14 @@
+---
+  - name: demo of loop over dictionaries
+    hosts: serverb.lab.example.com
+    tasks:
+      - name: print the info
+        ansible.builtin.debug:
+          msg: "The user {{ item.user }} is part of {{ item.group }} group and serving {{ item.role }} role in organization"
+        loop:
+          - user: sam
+            group: devops
+            role: developer
+          - user: marks
+            group: web
+            role: database

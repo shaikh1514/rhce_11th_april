@@ -1,0 +1,27 @@
+---
+  - name: create lvm using system roles
+    hosts: serverd.lab.example.com
+    vars:
+      storage_pools:
+        - name: vg1
+          type: lvm
+          disks:
+            - /dev/vdb
+          volumes:
+            - name: lv01
+              size: 400m
+              mount_point: /mnt/lv1
+              fs_type: xfs
+              state: present
+            - name: lv02
+              size: 200m
+              fs_type: swap
+              state: present
+    pre_tasks:
+      - name: create mount point
+        ansible.builtin.file:
+          path: /mnt/lv1
+          state: directory
+    roles:
+      - redhat.rhel_system_roles.storage
+            

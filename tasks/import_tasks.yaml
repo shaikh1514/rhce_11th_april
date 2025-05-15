@@ -1,0 +1,12 @@
+---
+  - name: import_tasks-1
+    ansible.builtin.debug:
+      msg: This is 1st Import Tasks
+
+  - name: import_tasks-2
+    ansible.builtin.command:
+      cmd: lsblk
+
+  - name: import_tasks-3
+    ansible.builtin.debug:
+      msg: Import Tasks finished

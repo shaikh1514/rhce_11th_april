@@ -1,0 +1,9 @@
+---
+  - name: testing secure variable
+    hosts: webservers
+    vars_files:
+      - myvars/secure.yaml
+    tasks:
+      - name: print the variable valiue
+        ansible.builtin.debug:
+          msg: The user {{ username }} will created using password {{ pass }}

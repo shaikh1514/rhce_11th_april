@@ -1,0 +1,8 @@
+---
+  - name: demo of sync module
+    hosts: webservers
+    tasks:
+      - name: sync the folder
+        ansible.posix.synchronize:
+          src: /home/student/ansible/host_vars
+          dest: /home/student

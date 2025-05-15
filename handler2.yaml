@@ -1,0 +1,23 @@
+---
+  - name: handling demo
+    hosts: serverc.lab.example.com
+    tasks:
+      - name: execute cmd
+        ansible.builtin.command:
+          cmd: free -h
+        notify: htask1
+
+      - name: print a msg
+        ansible.builtin.debug:
+          msg: This task not shows changes
+        notify: htask2
+        changed_when: true
+
+    handlers:
+      - name: htask2
+        ansible.builtin.debug:
+          msg: this is debug handlers
+      
+      - name: htask1
+        ansible.builtin.debug:
+          msg: THis is command handlers

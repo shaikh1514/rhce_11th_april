@@ -1,0 +1,17 @@
+---
+  - name: demo of failed_when
+    hosts: serverb.lab.example.com
+    tasks:
+      - name: executing cmd
+        ansible.builtin.command:
+          cmd: lsblk
+        failed_when: ansible_facts['distribution'] == 'RedHat'
+
+      - name: printing a msg
+        ansible.builtin.debug:
+          msg: "this task will not show any changes"
+
+      - name: creating a file
+        ansible.builtin.file:
+          path: /home/student/change.txt
+          state: touch

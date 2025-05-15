@@ -1,0 +1,11 @@
+---
+  - name: resize llvm
+    hosts: serverc.lab.example.com
+    tasks:
+      - name: resize the logical volume
+        community.general.lvol:
+          vg: vg-test
+          lv: lv-test
+          size: 800m
+          resizefs: true
+          force: yes

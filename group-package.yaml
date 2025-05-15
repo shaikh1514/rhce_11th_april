@@ -1,0 +1,8 @@
+---
+  - name: isntall group package
+    hosts: servera.lab.example.com
+    tasks:
+      - name: isntall group package
+        ansible.builtin.dnf:
+          name: '@Development Tools'
+          state: latest

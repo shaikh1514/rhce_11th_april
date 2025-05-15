@@ -1,0 +1,13 @@
+---
+  - name: dictionary variable
+    hosts: serverc.lab.example.com
+    vars:
+      fruits:
+        name: apple
+        test: sweet
+        avl: yes
+        price: high
+    tasks:
+      - name: print the variable
+        ansible.builtin.debug:
+          msg: "The fruit {{ fruits.name }} is {{ fruits.test }} in test and its price is {{ fruits.price }}"

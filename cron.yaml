@@ -1,0 +1,13 @@
+---
+  - name: creating crong jobs
+    hosts: webservers
+    tasks:
+      - name: creating job for user student
+        ansible.builtin.cron:
+          name: "student user job"
+          minute: "*/2"
+          hour: 22
+          day: 13
+          month: 05
+          job: /bin/echo "This tasks is executing by user $USER and in machine $(hostname) at time $(date)" >> /home/student/cron-file.txt
+          user: student

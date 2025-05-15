@@ -1,0 +1,19 @@
+---
+  - name: demo of changed_when
+    hosts: servera.lab.example.com
+    tasks:
+      - name: executing cmd
+        ansible.builtin.command:
+          cmd: lsblk
+        changed_when: false
+
+      - name: printing a msg
+        ansible.builtin.debug:
+          msg: "this task will not show any changes"
+        changed_when: true
+
+      - name: creating a file
+        ansible.builtin.file:
+          path: /home/student/change.txt
+          state: touch
+        changed_when: false

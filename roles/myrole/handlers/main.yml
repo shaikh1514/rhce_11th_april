@@ -1,0 +1,5 @@
+---
+# handlers file for myrole
+  - name: role_handler
+    ansible.builtin.debug:
+      msg: This is roles handlers

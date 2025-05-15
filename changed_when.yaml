@@ -1,0 +1,19 @@
+---
+  - name: demo of changed_when
+    hosts: servera.lab.example.com
+    tasks:
+      - name: executing cmd
+        ansible.builtin.command:
+          cmd: lsblk
+        changed_when: ansible_hostname == 'serverb'
+
+      - name: printing a msg
+        ansible.builtin.debug:
+          msg: "this task will not show any changes"
+        changed_when: inventory_hostname is in groups['appservers']
+
+      - name: creating a file
+        ansible.builtin.file:
+          path: /home/student/change.txt
+          state: touch
+        changed_when: ansible_facts['devices']['vda']['size'] > '11'

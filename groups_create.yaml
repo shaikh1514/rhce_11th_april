@@ -1,0 +1,24 @@
+---
+  - name: create groups
+    hosts: appservers
+    vars_files:
+      - myvars/users_vars.yaml
+    tasks:
+      - name: create group for coder role
+        ansible.builtin.group:
+          name: "{{ item['group'] }}"
+          state: present
+        loop: "{{ users }}"
+        when: inventory_hostname is in groups['webservers'] and item.job == 'coder'
+
+      - name: create group for developer role
+        ansible.builtin.group:
+          name: "{{ item['group'] }}"
+          state: present
+        loop: "{{ users }}"
+        when: inventory_hostname is in groups['dbservers'] and item.job == 'developer'
+
+      - name: create manager group
+        ansible.builtin.group:
+          name: manager
+          state: present

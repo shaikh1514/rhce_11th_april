@@ -1,0 +1,11 @@
+---
+  - name: create custom facts directory
+    hosts: appservers
+    vars:
+      remote_file: /etc/ansible/facts.d/custom.fact
+    tasks:
+      - name: create file
+        ansible.builtin.file:
+          path: "{{ remote_file }}"
+          state: touch
+          

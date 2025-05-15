@@ -1,0 +1,14 @@
+---
+  - name: testing troublehsooting
+    hosts: servera.lab.example.com
+    tasks:
+      - name: create a file
+        ansible.builtin.file:
+          path: /home/student/myfile.txt
+          state: touch
+
+      - name: addig a test
+        ansible.builtin.copy:
+          content: Machine full name is {{ ansible_facts['fqdn'] }}
+          dest: /home/student/myfile.txt
+

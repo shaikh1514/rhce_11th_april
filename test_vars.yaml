@@ -1,0 +1,15 @@
+---
+  - name: testing variables
+    hosts: webservers
+    vars:
+      loc1: /home/student/samsung
+      loc2: /home/student/apple
+    tasks:
+      - name: create a file
+        ansible.builtin.file:
+          path: "{{ loc1 }}"
+          state: touch
+
+      - name: printing the variable vvalue
+        ansible.builtin.debug:
+          msg: "The file will be created inside location {{ loc1 }} but {{ loc2 }} file will not be created"

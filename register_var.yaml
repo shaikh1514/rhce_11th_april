@@ -1,0 +1,12 @@
+---
+  - name: testing register variable
+    hosts: webservers
+    tasks:
+      - name: execute a cmd
+        ansible.builtin.command:
+          cmd: hostname
+        register: banana
+
+      - name: print the resullt
+        ansible.builtin.debug:
+          var: banana.stdout

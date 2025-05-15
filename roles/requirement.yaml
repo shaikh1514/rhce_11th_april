@@ -1,0 +1,13 @@
+---
+  - src: https://github.com/geerlingguy/ansible-role-docker.git
+    scm: git
+    name: docker_role
+  
+  - src: redhatinsights.insights-client
+    name: redhat_role
+
+# - src: file:///home/student/rolename.tar
+#   name: 
+#
+# - src: http://content.example.com/rhel9/my/role.tar
+#   name: 

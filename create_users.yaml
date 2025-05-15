@@ -1,0 +1,85 @@
+---
+  - name: create users and configure ssh and sudo
+    hosts: appservers
+    vars_files:
+      - myvars/users_vars.yaml
+    tasks:
+      - name: create user for job coder
+        ansible.builtin.user:
+          name: "{{ item.name }}"
+          state: present
+          groups: "{{ item.group }}"
+          password: "{{ item.pass | password_hash('sha512') }}"
+        loop: "{{ users }}"
+        when: inventory_hostname is in groups['webservers'] and item['job'] == 'coder'
+
+      - name: create user for job developer
+        ansible.builtin.user:
+          name: "{{ item.name }}"
+          state: present
+          groups: "{{ item.group }}"
+          password: "{{ item.pass | password_hash('sha512') }}"
+        loop: "{{ users }}"
+        when: inventory_hostname is in groups['dbservers'] and item['job'] == 'developer'
+
+      - name: create user for job admin
+        ansible.builtin.user:
+          name: lisa
+          state: present
+          groups: manager
+          password: "{{ item.pass | password_hash('sha512') }}"
+        loop: "{{ users }}"
+        when: item.job == 'admin'
+
+      - name: configure keys for job coder
+        ansible.posix.authorized_key:
+          user: "{{ item.name }}"
+          state: present
+          key: "{{ lookup('file', '/home/student/ansible/ssh_keys/'+ item['name'] + '.pub') }}"
+        loop: "{{ users }}"
+        when: inventory_hostname is in groups['webservers'] and item.job == 'coder'
+
+      - name: configure keys for developer coder
+        ansible.posix.authorized_key:
+          user: "{{ item.name }}"
+          state: present
+          key: "{{ lookup('file', '/home/student/ansible/ssh_keys/'+ item['name'] + '.pub') }}"
+        loop: "{{ users }}"
+        when: inventory_hostname is in groups['dbservers'] and item.job == 'developer'
+
+      - name: configure keys for job admin
+        ansible.posix.authorized_key:
+          user: "{{ item.name }}"
+          state: present
+          key: "{{ lookup('file', '/home/student/ansible/ssh_keys/'+ item['name'] + '.pub') }}"
+        loop: "{{ users }}"
+        when: item.job == 'admin'
+
+      - name: configure sudo access for job coder
+        ansible.builtin.lineinfile:
+         path: /etc/sudoers.d/webapp
+         state: present
+         create: true   
+         mode: 0440   
+         line: "%webapp ALL=(ALL) NOPASSWD: ALL"     
+         validate: /usr/sbin/visudo -cf %s
+        when: inventory_hostname is in groups['webservers']
+
+      - name: configure sudo access for job developer
+        ansible.builtin.lineinfile:
+         path: /etc/sudoers.d/development
+         state: present
+         create: true
+         mode: 0440
+         line: "%development ALL=(ALL) NOPASSWD: ALL"
+         validate: /usr/sbin/visudo -cf %s
+        when: inventory_hostname is in groups['dbservers']
+
+      - name: configure sudo access for job admin
+        ansible.builtin.lineinfile:
+         path: /etc/sudoers.d/manager
+         state: present
+         create: true
+         mode: 0440
+         line: "%manager ALL=(ALL) NOPASSWD: ALL"
+         validate: /usr/sbin/visudo -cf %s

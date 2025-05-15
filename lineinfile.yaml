@@ -1,0 +1,11 @@
+---
+  - name: testing lineinfile
+    hosts: serverc.lab.example.com
+    tasks:
+      - name: add a line
+        ansible.builtin.lineinfile:
+          path: /home/student/ansible151.txt
+          line: "Welcome to the world of OpenShift"
+          insertafter: "Hello this file created from workstation using copy module"
+          state: present
+

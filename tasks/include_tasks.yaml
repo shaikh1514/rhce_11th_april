@@ -1,0 +1,12 @@
+---
+  - name: include_tasks-1
+    ansible.builtin.debug:
+      msg: This is include tasks
+
+  - name: include_tasks-2
+    ansible.builtin.command:
+      cmd: free -h
+
+  - name: include_tasks-3
+    ansible.builtin.debug:
+      msg: Include tasks finished

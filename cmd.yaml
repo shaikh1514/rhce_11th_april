@@ -1,0 +1,12 @@
+---
+  - name: print file info
+    hosts: appservers
+    tasks:
+      - name: collect file info
+        ansible.builtin.command:
+          cmd: cat /etc/ansible/facts.d/custom.fact
+        register: result
+
+      - name: print info
+        ansible.builtin.debug:
+          var: result

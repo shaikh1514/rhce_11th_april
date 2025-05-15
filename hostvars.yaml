@@ -1,0 +1,8 @@
+---
+  - name: demo of hostvars variables
+    hosts: servera.lab.example.com
+    tasks:
+      - name: print servera info
+        ansible.builtin.debug:
+          msg: servera ip add is {{ hostvars['ansible_facts']['default_ipv4']['address'] }}
+          

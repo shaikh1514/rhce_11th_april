@@ -1,0 +1,14 @@
+---
+  - name: demo of blockinfile
+    hosts: serverd.lab.example.com
+    tasks:
+      - name: add a data block
+        ansible.builtin.blockinfile:
+          path: /home/student/ansible.cfg
+          block: |
+            " hello Everyone. My Self Tausif, and we are
+            learning Ansible. Currnetly we are in ch: 5 
+            and we are learning about data modules. We will
+            learn about template modules later. in that 
+            module we will cover jinja2 template"
+          state: present

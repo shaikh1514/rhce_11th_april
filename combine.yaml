@@ -1,0 +1,11 @@
+---
+  - name: testing combine 
+    hosts: serverd.lab.example.com
+    vars:
+      fruit1: apple
+      fruit2: mango
+      avl: "{{ fruit1 }} {{ fruit2 }}"
+    tasks:
+      - name: print the fruit name
+        ansible.builtin.debug:
+          msg: the fruits available are {{ avl }} but single fruit {{ fruit2 }} is not available

@@ -1,0 +1,17 @@
+---
+  - name: print all the facts
+    hosts: servera.lab.example.com
+    gather_facts: false
+    tasks:
+      - name: collect info
+        ansible.builtin.setup:
+          gather_subset:
+            - '!network'
+            - 'all'
+      - name: print the system facts
+        ansible.builtin.debug:
+          var: ansible_facts
+
+      - name: print memory info
+        ansible.builtin.debug:
+          msg: ip add is {{ ansible_facts['default_ipv4']['address'] }}

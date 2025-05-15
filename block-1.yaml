@@ -1,0 +1,14 @@
+---
+  - name: demo of ansible block
+    hosts: servera.lab.example.com
+    tasks:
+      - name:
+        block:
+          - name: Task-1
+            ansible.builtin.command:
+              cmd: lsblk
+
+          - name: Task-2
+            ansible.builtin.debug:
+              msg: Good Morning
+        when: ansible_facts['hostname'] == 'serverb'

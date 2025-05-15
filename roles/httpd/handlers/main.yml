@@ -1,0 +1,6 @@
+---
+# handlers file for httpd
+  - name: restart
+    ansible.builtin.service:
+      name: "{{ pkg1 }}"
+      state: restarted

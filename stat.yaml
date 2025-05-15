@@ -1,0 +1,12 @@
+---
+  - name: getting file info
+    hosts: serverd.lab.example.com
+    tasks:
+      - name: get file info
+        ansible.builtin.stat:
+          path: /home/student/ansible.cfg
+        register: result
+
+      - name: print the ifo
+        debug:
+          var: result

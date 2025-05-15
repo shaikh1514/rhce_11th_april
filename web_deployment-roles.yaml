@@ -1,0 +1,5 @@
+---
+  - name: implemtnign webserrver  using roles
+    hosts: appservers
+    roles:
+      - httpd

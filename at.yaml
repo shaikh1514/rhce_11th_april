@@ -1,0 +1,19 @@
+---
+  - name: delete users using at module
+    hosts: appservers
+    vars:
+      users:
+        - chandra
+        - shaikh
+        - aws
+        - ansible
+        - mujeeb
+        - apache
+    tasks:
+      - name: delete user using at
+        ansible.posix.at:
+          command: userdel -r {{ item }}
+          count: 2
+          units: minutes
+          unique: true
+        loop: "{{ users }}"

@@ -1,0 +1,13 @@
+---
+  - name: demo of list varaible
+    hosts: serverb.lab.example.com
+    vars:
+      state:
+        - gujarat
+        - Delhi
+        - Karnataka
+        - Kerala
+    tasks:
+      - name: print the state name
+        ansible.builtin.debug:
+          msg: I am leaving in the {{ state[0] }} state

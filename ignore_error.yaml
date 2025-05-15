@@ -1,0 +1,17 @@
+---
+  - name: testing ignore_errors
+    hosts: serverd.lab.example.com
+    ignore_errors: true
+    tasks:
+      - name: task-1
+        ansible.builtin.command:
+          cmd: free -h
+
+      - name: task-2
+        ansible.builtin.command:
+          cmd: tausif
+
+      - name: task-3
+        ansible.builtin.command:
+          cmd: lsblk
+        

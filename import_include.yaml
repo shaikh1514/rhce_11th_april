@@ -1,0 +1,16 @@
+---
+  - name: executing import and include tasks
+    hosts: servera.lab.example.com
+    tasks:
+      - name: executing importing tasks
+        ansible.builtin.import_tasks: tasks/import_tasks.yaml
+
+      - name: regular tasks
+        ansible.builtin.command:
+          cmd: hostname
+
+      - name: executing including tasks
+        include_tasks: tasks/include_tasks.yaml
+  
+  - name: import whole play
+    import_playbook: tasks/import_play.yml

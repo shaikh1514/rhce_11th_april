@@ -1,0 +1,30 @@
+---
+# tasks file for httpd
+  - name: installling packages
+    ansible.builtin.dnf:
+      name:
+        - "{{ pkg1 }}"
+        - "{{ pkg2 }}"
+      state: latest
+
+  - name: start services
+    ansible.builtin.service:
+      name: "{{ item }}"
+      state: started
+      enabled: true
+    loop:
+      - "{{ pkg1 }}"
+      - "{{ pkg2 }}"
+
+  - name: configure index.html
+    ansible.builtin.template:
+      src: index.j2
+      dest: /var/www/html/index.html
+    notify: restart
+
+  - name: enable {{ pkg1 }} in {{ pkg2 }}
+    ansible.posix.firewalld:
+      service: http
+      state: enabled
+      immediate: true
+      permanent: true

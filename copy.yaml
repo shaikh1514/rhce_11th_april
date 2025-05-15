@@ -1,0 +1,22 @@
+---
+  - name: testing copy modules
+    hosts: dbservers
+    vars:
+      src1: /home/student/ansible/ansible.cfg
+      dest1: /home/student
+      file1: /home/student/myfile.txt
+    tasks:
+      - name: copy ansible.cfg file in dbserver
+        ansible.builtin.copy:
+          src: "{{ src1 }}"
+          dest: "{{ dest1 }}"
+          owner: student
+          group: devops
+          mode: u+rw,g+rw,o-rwx
+          setype: nfs_t
+
+      - name: create file with content
+        ansible.builtin.copy:
+          content: "Hello this file created from workstation using copy module"
+          dest: /home/student/ansible151.txt
+    

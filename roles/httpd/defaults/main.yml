@@ -1,0 +1,4 @@
+---
+# defaults file for httpd
+pkg1: http
+pkg2: firewall 

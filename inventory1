@@ -1,0 +1,24 @@
+#ungrouped members
+master.example.com
+servera.lab.example.com
+serverb.lab.example.com
+10.0.0.1
+10.0.0.2
+10.0.0.[3:10]
+server[d:f].lab.example.com
+
+[group1]
+servera.lab.example.com
+serverc.lab.example.com
+10.0.0.[11:13]
+
+[group2]
+servera.lab.example.com
+10.0.0.[3:5]
+
+[london]
+serverd.lab.example.com
+
+[master1:children]
+group1
+london

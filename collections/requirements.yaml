@@ -1,0 +1,6 @@
+---
+  collections:
+    - name: git+https://github.com/ansible-collections/community.general.git
+
+#   - name: /home/student/colelction.tar.gz
+#   - name: https://content.example.com/rhel9/ansible/mycollection.tar.gz

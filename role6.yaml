@@ -1,0 +1,36 @@
+---
+  - name: executing roles and tasks
+    hosts: servera.lab.example.com
+    tasks:
+      - name: general tasks
+        ansible.builtin.command:
+          cmd: free -h
+        notify: gen_handler
+    roles:
+      - myrole
+
+    pre_tasks:
+      - name: pre-tasks1
+        ansible.builtin.debug:
+          msg: This is pre-tasks and will execute first 
+        changed_when: true
+        notify: pre_handler
+
+    post_tasks:
+      - name: post_tasks
+        ansible.builtin.debug:
+          msg: This is post tasks which will execute at the end
+        changed_when: true
+        notify: post_handler
+
+    handlers:
+      - name: gen_handler
+        debug:
+          msg: this is general tasks handlers
+      - name: pre_handler
+        debug:
+          msg: This is pre task handler
+      - name: post_handler
+        debug:
+          msg: this is post tasks handler
+

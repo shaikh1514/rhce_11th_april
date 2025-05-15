@@ -1,0 +1,19 @@
+---
+  - name: executing roles and tasks
+    hosts: servera.lab.example.com
+    tasks:
+      - name: general tasks
+        ansible.builtin.command:
+          cmd: free -h
+    roles:
+      - myrole
+
+    pre_tasks:
+      - name: pre-tasks1
+        ansible.builtin.debug:
+          msg: This is pre-tasks and will execute first 
+
+    post_tasks:
+      - name: post_tasks
+        ansible.builtin.debug:
+          msg: This is post tasks which will execute at the end

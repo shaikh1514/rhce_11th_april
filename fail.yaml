@@ -1,0 +1,11 @@
+---
+  - name: testing fail module
+    hosts: serverc.lab.example.com
+    tasks:
+      - name: fail with msg
+        ansible.builtin.fail:
+          msg: "This tasks will not execute"
+
+      - name: task-1
+        ansible.builtin.debug:
+          msg: This tasks execute successfully

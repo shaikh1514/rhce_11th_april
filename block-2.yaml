@@ -1,0 +1,26 @@
+---
+  - name: demo of ansible block
+    hosts: serverb.lab.example.com
+    tasks:
+      - name:
+        block:
+          - name: block Task-1
+            ansible.builtin.command:
+              cmd: lsblk
+
+          - name: block Task-2
+            ansible.builtin.debug:
+              msgs: Good Morning
+
+          - name: block Task-3
+            ansible.builtin.command:
+              cmd: ls
+        rescue:
+          - name: rescue task1
+            ansible.builtin.file:
+              path: /home/student/ansible.txt
+              state: touch
+        always:
+          - name: always tasks
+            ansible.builtin.debug:
+              msg: All Tasks Executed Succesfully

@@ -1,0 +1,19 @@
+workstation.lab.example.com
+
+[webservers]
+servera.lab.example.com   tech=lenovo
+serverb.lab.example.com   tech=hp
+
+[webservers:vars]
+tech = network
+
+[dbservers]
+serverc.lab.example.com   tech=dell
+serverd.lab.example.com   tech=asus
+
+[dbservers:vars]
+tech = hardware
+
+[appservers:children]
+webservers
+dbservers               

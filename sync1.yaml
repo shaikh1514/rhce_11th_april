@@ -1,0 +1,9 @@
+---
+  - name: pulling the folder using sync modukle
+    hosts: servera.lab.example.com
+    tasks:
+      - name: pulll the openshift folder
+        ansible.posix.synchronize:
+          src: /home/student/openshift
+          dest: /home/student/ansible
+          mode: pull

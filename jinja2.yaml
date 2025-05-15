@@ -1,0 +1,13 @@
+---
+  - name: redirect output using jinja
+    hosts: serverb.lab.example.com
+    tasks:
+      - name: executing cmd
+        ansible.builtin.command:
+          cmd: ls -l /home
+        register: banana
+
+      - name: print the value in json
+        ansible.builtin.template:
+          src: jinja2/variable.j2
+          dest: /home/student/winter2.txt

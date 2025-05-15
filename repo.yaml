@@ -1,0 +1,12 @@
+---
+  - name: configuring yum repo
+    hosts: appservers
+    tasks:
+      - name: configure repo for simple-agnet package
+        ansible.builtin.yum_repository:
+          name: private-repo
+          description: "This is custom repo"
+          baseurl: http://materials.example.com/yum/repository
+          enabled: true
+          gpgcheck: true
+          gpgkey: http://materials.example.com/yum/repository/RPM-GPG-KEY-example

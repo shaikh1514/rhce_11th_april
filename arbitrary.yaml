@@ -1,0 +1,7 @@
+---
+  - name: testing arbitrary modules
+    hosts: serverb.lab.example.com
+    tasks:
+      - name: executing cmd
+        ansible.builtin.command:
+          cmd: timedatectl

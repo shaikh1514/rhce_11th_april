@@ -1,0 +1,9 @@
+---
+  - name: replace demo
+    hosts: serverc.lab.example.com
+    tasks:
+      - name: replace the dat
+        ansible.builtin.replace:
+          path: /home/student/ansible.cfg
+          regexp: '^remote_user = devops$'
+          replace: 'This is the new line'

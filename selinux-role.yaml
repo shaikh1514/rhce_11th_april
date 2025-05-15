@@ -1,0 +1,7 @@
+---
+  - name: change selinux mode using system roles
+    hosts: webservers
+    vars:
+      selinux_state: enforcing
+    roles:
+      - redhat.rhel_system_roles.selinux

@@ -1,0 +1,9 @@
+---
+  - name: create user based on condition
+    hosts: appservers
+    tasks:
+      - name: create user
+        ansible.builtin.user:
+          name: first
+          state: present
+        when: inventory_hostname is in groups['webservers']  

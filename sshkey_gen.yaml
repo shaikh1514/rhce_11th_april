@@ -1,0 +1,13 @@
+---
+  - name: generaitng ssh keys
+    hosts: workstation.lab.example.com
+    vars_files:
+      - myvars/users_vars.yaml
+    tasks:
+      - name: generating keys
+        ansible.builtin.user:
+          name: "{{ item.name }}"
+          generate_ssh_key: true
+          ssh_key_bits: 2048
+          ssh_key_file: /home/student/ansible/ssh_keys/{{ item['name'] }}
+        loop: "{{ users }}"

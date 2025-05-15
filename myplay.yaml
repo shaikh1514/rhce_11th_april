@@ -1,0 +1,32 @@
+---
+  - name: my first playboook
+    hosts: webservers
+    tasks:
+      - name: create a folder
+        ansible.builtin.file:
+          path: /home/student/ansible1
+          state: directory
+      
+      - name: create a file
+        ansible.builtin.file:
+          path: /home/student/ansible1/apple.txt
+          state: touch
+      
+      - name: adding a line
+        ansible.builtin.copy:
+          content: "Hello this line added by Ansible"
+          dest: /home/student/ansible1/apple.txt
+  
+  - name: this is my second play
+    hosts: dbservers
+    tasks:
+      - name: executinng a cmd
+        ansible.builtin.command:
+          cmd: uname -r
+      
+      - name: downoading package
+        ansible.builtin.dnf:
+          name: httpd
+          state: latest
+          
+          

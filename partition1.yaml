@@ -1,0 +1,53 @@
+---
+  - name: creating two partition in servera
+    hosts: servera.lab.example.com
+    tasks:
+      - name: create 1st partition
+        community.general.parted:
+          device: /dev/vdb
+          number: 1
+          state: present
+          label: gpt
+          part_start: 0%
+          part_end: 50%
+
+      - name: create 2nd partition
+        community.general.parted:
+          device: /dev/vdb
+          number: 2
+          state: present
+          label: gpt
+          part_start: 51%
+          part_end: 100%
+
+      - name: assign a file system
+        community.general.filesystem:
+          fstype: "{{ item.fs }}"
+          dev: "{{ item.dev }}"
+        loop:
+          - fs: ext4
+            dev: /dev/vdb1
+          - fs: xfs
+            dev: /dev/vdb2
+      
+      - name: create mount point
+        ansible.builtin.file:
+          path: "{{ item }}"
+          state: directory
+        loop:
+          - /mnt/part1
+          - /mnt/part2
+
+      - name: mountfile system
+        ansible.posix.mount:
+          path: "{{ item.path }}"
+          src: "{{ item.src }}"
+          fstype: "{{ item.fs }}"
+          state: mounted
+        loop:
+          - path: /mnt/part1
+            src: /dev/vdb1
+            fs: ext4
+          - path: /mnt/part2
+            src: /dev/vdb2
+            fs: xfs

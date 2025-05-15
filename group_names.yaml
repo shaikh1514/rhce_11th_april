@@ -1,0 +1,7 @@
+---
+  - name: demo of group_names variable
+    hosts: servera.lab.example.com, serverc.lab.example.com
+    tasks:
+      - name: print the group name
+        ansible.builtin.debug:
+          msg: The host {{ inventory_hostname }} is part of {{ group_names }}

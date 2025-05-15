@@ -1,0 +1,8 @@
+---
+  - name: testing fetch module
+    hosts: webservers
+    tasks:
+      - name: get logs of webservers machine
+        ansible.builtin.fetch:
+          src: /var/log/secure
+          dest: /home/student/ansible/remote_data
