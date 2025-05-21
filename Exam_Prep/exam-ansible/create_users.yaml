@@ -1,0 +1,34 @@
+---
+  - name: create users
+    hosts: all
+    vars_files:
+      - user_list.yaml
+      - vault.yaml
+    tasks:
+      - name: create group
+        ansible.builtin.group:
+          name: "{{ item }}"
+          state: present
+        loop:
+          - devops
+          - opsmgr
+
+      - name: create user for job description developer
+        ansible.builtin.user:
+          name: "{{ item.name }}"
+          state: present
+          groups: devops
+          password: "{{ dev_pass | password_hash('sha512') }}"
+          password_expire_max: "{{ item.password_expire_days }}"
+        loop: "{{ users }}"
+        when: ( inventory_hostname is in groups['dev'] or inventory_hostname is in groups['balancers'] ) and item.job == 'developer'
+
+      - name: create user for job description manager
+        ansible.builtin.user:
+          name: "{{ item.name }}"
+          state: present
+          groups: manager
+          password: "{{ dev_pass | password_hash('sha512') }}"
+          password_expire_max: "{{ item.password_expire_days }}"
+        loop: "{{ users }}"
+        when: inventory_hostname is in groups['prod'] and item.job == 'manager'

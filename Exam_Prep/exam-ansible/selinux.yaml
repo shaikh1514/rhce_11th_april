@@ -1,0 +1,7 @@
+---
+  - name: configuire NTP
+    hosts: balancers, prod
+    vars:
+      selinux_state: enforcing
+    roles:
+      - redhat.rhel_system_roles.selinux

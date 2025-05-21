@@ -1,0 +1,13 @@
+---
+  - name: configuring repo
+    hosts: all
+    tasks:
+      - name: installing repo
+        ansible.builtin.yum_repository:
+          name: baseos
+          description: 'RH294 Description'
+          baseurl: http://materials.example.com/yum/repository
+          gpgcheck: true
+          gpgkey: http://materials.example.com/yum/repository/RPM-GPG-KEY-example
+          enabled: true
+

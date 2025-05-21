@@ -1,0 +1,9 @@
+---
+  - name: create template
+    hosts: all
+    tasks:
+      - name: generating host file
+        ansible.builtin.template:
+          src: hosts.j2
+          dest: /etc/hosts
+        when: inventory_hostname is in groups['dev']

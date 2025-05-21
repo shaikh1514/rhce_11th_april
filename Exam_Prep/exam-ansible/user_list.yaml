@@ -1,0 +1,11 @@
+---
+  users:
+    - name: joe
+      job: manager
+      password_expire_days: 20
+    - name: bob
+      job: developer
+      password_expire_days: 30
+    - name: alice
+      job: manager
+      password_expire_days: 40

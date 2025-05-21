@@ -1,0 +1,10 @@
+---
+  - name: install hellophp role first
+    hosts: webservers
+    roles:
+      - phphello
+
+  - name: install balancer role
+    hosts: balaners
+    roles:
+      - balancer

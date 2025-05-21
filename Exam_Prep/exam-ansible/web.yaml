@@ -1,0 +1,47 @@
+---
+  - name: configure webpage
+    hosts: dev
+    tasks:
+      - name: install package
+        ansible.builtin.dnf:
+          name:
+            - httpd
+            - firewalld
+          state: latest
+
+      - name: start service
+        ansible.builtin.service:
+          name: "{{ item }}"
+          state: started
+          enabled: true
+        loop:
+          - httpd
+          - firewalld
+
+      - name: enable firewall
+        ansible.posix.firewalld:
+          service: http
+          state: enabled
+          immediate: true
+          permanent: true
+
+      - name: create webdev direcotry
+        ansible.builtin.file:
+          path: /webdev
+          state: directory
+          owner: apache
+          mode: '2775'
+          setype: httpd_sys_content_t
+
+      - name: create sym link
+        ansible.builtin.file:
+          src: /webdev
+          dest: /var/www/html/webdev
+          state: link
+          setype: httpd_sys_content_t
+
+      - name: create index.html file
+        ansible.builtin.copy:
+          content: "Development"
+          dest: /webdev/index.html
+          setype: httpd_sys_content_t

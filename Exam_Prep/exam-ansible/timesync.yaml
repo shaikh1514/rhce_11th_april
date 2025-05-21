@@ -1,0 +1,9 @@
+---
+  - name: configuire NTP
+    hosts: balancers, prod
+    vars:
+      timesync_ntp_servers:
+        - hostname: 0.in.pool.ntp.org
+          iburst: yes
+    roles:
+      - redhat.rhel_system_roles.timesync

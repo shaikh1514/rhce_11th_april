@@ -1,0 +1,40 @@
+---
+  - name: create partition
+    hosts: all
+    ignore_errors: true
+    tasks:
+      - name: create lvm data worth size 600mb
+        community.general.lvol:
+          vg: research
+          lv: data
+          size: 600
+          state: present
+
+      - name: create lvm worth 200mb
+        community.general.lvol:
+          vg: research
+          lv: data
+          size: 200
+          state: present
+        when: ansible_facts['lvm']['vgs']['research']['size_g'] < '0.60'
+
+      - name: check vg avaiable or not
+        ansible.builtin.command:
+          cmd: vgs
+        register: vg_check
+
+      - name: print if vg not avaiable
+        ansible.builtin.debug:
+          msg: "VG not found"
+        when: vg_check.rc != 0
+
+      - name: print insufficient size
+        ansible.builtin.debug:
+          msg: "Insufficient size of VG"
+        when: ansible_facts['lvm']['vgs']['research']['size_g'] < '0.60'
+
+      - name: format the partition
+        community.general.filesystem:
+          fstype: ext4
+          dev: /dev/research/data
+        when: vg_check.rc == 0
